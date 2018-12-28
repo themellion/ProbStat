@@ -11,7 +11,7 @@
 
 
 
-<title>Index</title>
+<title>Data Exploration</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -296,29 +296,59 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Index</h1>
+<h1 class="title toc-ignore">Data Exploration</h1>
 
 </div>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-</div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="index_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>In a study conducted by the National Institutes of Health, 109 clinically depressed patients were separated into three groups, and each group was given one of two active drugs (imipramine or lithium) or no drug at all. For each patient, the dataset contains the treatment used, the outcome of the treatment, and several other interesting characteristics.</p>
+<p>Here is a summary of the variables in our dataset:</p>
+<ul>
+<li>Hospt: The patient’s hospital, represented by a code for each of the 5 hospitals (1, 2, 3, 5, or 6)</li>
+<li>Treat: The treatment received by the patient (Lithium, Imipramine, or Placebo)</li>
+<li>Outcome: Whether or not a recurrence occurred during the patient’s treatment (Recurrence or No Recurrence)</li>
+<li>Time: Either the time in days till the first recurrence, or if a recurrence did not occur, the length in days of the patient’s participation in the study.</li>
+<li>AcuteT: The time in days that the patient was depressed prior to the study.</li>
+<li>Age: The age of the patient in years, when the patient entered the study.</li>
+<li>Gender: The patient’s gender (1 = Female, 2 = Male)</li>
+</ul>
+<p>Read-in data</p>
+<pre class="r"><code>load(&quot;data/depression.RData&quot;)</code></pre>
+<p>Get a summary of each column in the dataset.</p>
+<pre class="r"><code>summary(depression)</code></pre>
+<pre><code>##      Hospt           Treat           Outcome            Time        
+##  Min.   :1.000   Min.   :0.0000   Min.   :0.0000   Min.   :  0.000  
+##  1st Qu.:2.000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:  6.286  
+##  Median :5.000   Median :1.0000   Median :1.0000   Median : 31.857  
+##  Mean   :3.927   Mean   :0.9725   Mean   :0.5229   Mean   : 46.515  
+##  3rd Qu.:5.000   3rd Qu.:2.0000   3rd Qu.:1.0000   3rd Qu.: 78.429  
+##  Max.   :6.000   Max.   :2.0000   Max.   :1.0000   Max.   :206.000  
+##      AcuteT           Age            Gender     
+##  Min.   : 47.0   Min.   :20.00   Min.   :1.000  
+##  1st Qu.:133.0   1st Qu.:29.00   1st Qu.:1.000  
+##  Median :165.0   Median :39.00   Median :1.000  
+##  Mean   :185.7   Mean   :40.26   Mean   :1.349  
+##  3rd Qu.:214.0   3rd Qu.:51.00   3rd Qu.:2.000  
+##  Max.   :512.0   Max.   :65.00   Max.   :2.000</code></pre>
+<p>Get information about class, type and size of the dataset.</p>
+<pre class="r"><code>str(depression)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    109 obs. of  7 variables:
+##  $ Hospt  : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Treat  : int  0 1 1 0 0 2 0 2 2 2 ...
+##  $ Outcome: int  1 0 0 1 0 1 0 1 0 1 ...
+##  $ Time   : num  36.1 105.1 74.6 49.7 14.4 ...
+##  $ AcuteT : int  211 176 191 206 63 70 55 512 162 306 ...
+##  $ Age    : int  33 49 50 29 29 30 56 48 22 61 ...
+##  $ Gender : int  1 1 1 2 1 2 1 1 2 2 ...</code></pre>
+<p>Recode variables:</p>
+<pre class="r"><code>depression$Gender = replace(depression$Gender,depression$Gender==1,&#39;Female&#39;);
+depression$Gender = replace(depression$Gender,depression$Gender==2,&#39;Male&#39;);
+table(depression$Gender)</code></pre>
+<pre><code>## 
+## Female   Male 
+##     71     38</code></pre>
 </div>
 
 
