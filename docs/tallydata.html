@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Tallying Data and Pie Charts</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -299,13 +299,28 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Tallying Data and Pie Charts</h1>
 
 </div>
 
 
-<div id="probstat" class="section level1">
-<h1>ProbStat</h1>
-<p>R code used in the Probability and Statistics course of Stanford that appears here: <a href="https://lagunita.stanford.edu/courses/course-v1:OLI+ProbStat+Open_Jan2017/info" class="uri">https://lagunita.stanford.edu/courses/course-v1:OLI+ProbStat+Open_Jan2017/info</a></p>
+<div id="summarise-data-and-make-charts" class="section level3">
+<h3>Summarise data and make charts</h3>
+<p>A survey that asked 1,200 U.S. college students about their body perception also asked the following question:</p>
+<p>“With whom do you find it easiest to make friends?” (opposite sex, same sex or no difference).</p>
+<p>In this activity we will use the collected data to:</p>
+<ul>
+<li>learn how to tally our data into a table of counts and percents.</li>
+<li>learn how to produce a pie chart.</li>
+</ul>
+<p>Load required dataset:</p>
+<pre class="r"><code>load(&quot;data/friends.RData&quot;)</code></pre>
+<p>Get a summary table of the data:</p>
+<pre class="r"><code>t = table(friends$Friends)
+t</code></pre>
+<pre><code>## 
+## No difference  Opposite sex      Same sex 
+##           602           434           164</code></pre>
 </div>
 
 
