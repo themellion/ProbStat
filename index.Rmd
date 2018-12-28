@@ -6,4 +6,4 @@ title: "Index"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Material is based on the Stanford course Probability & Statistics. 
+Material is based on the Stanford course Probability & Statistics. 
