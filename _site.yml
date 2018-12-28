@@ -1,0 +1,12 @@
+name: "Probability and Statistics"
+output_dir: "docs"
+navbar:
+  title: "Probability and Statistics"
+  left:
+  - text: "Home"
+    href: index.html
+  - text: "Data exploration"
+    href: exploreVariables.html
+output:
+  html_document:
+theme: cosmo
