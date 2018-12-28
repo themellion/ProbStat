@@ -1,0 +1,29 @@
+---
+title: "Tallying Data and Pie Charts"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Summarise data and make charts
+A survey that asked 1,200 U.S. college students about their body perception also asked the following question:
+
+"With whom do you find it easiest to make friends?" (opposite sex, same sex or no difference).
+
+In this activity we will use the collected data to:
+
+* learn how to tally our data into a table of counts and percents.
+* learn how to produce a pie chart.
+
+Load required dataset:
+```{r }
+load("data/friends.RData")
+```
+
+Get a summary table of the data:
+```{r }
+t = table(friends$Friends)
+t
+```
+

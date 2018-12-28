@@ -7,6 +7,8 @@ navbar:
     href: index.html
   - text: "Data exploration"
     href: exploreVariables.html
+  - text: "Tallying Data and Pie Charts"
+    href: tallydata.html
 output:
   html_document:
 theme: cosmo
