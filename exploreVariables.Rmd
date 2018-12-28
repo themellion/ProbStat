@@ -1,6 +1,10 @@
 ---
 title: "Data Exploration"
-output: html_document
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 ---
 
 ```{r setup, include=FALSE}
@@ -21,6 +25,10 @@ Here is a summary of the variables in our dataset:
 * Age: The age of the patient in years, when the patient entered the study.
 * Gender: The patient's gender (1 = Female, 2 = Male)
 
+Read-in data 
+```{r }
+load("data/depression.RData")
+```
 
 Get a summary of each column in the dataset. 
 ```{r depression}
@@ -29,13 +37,13 @@ summary(depression)
 
 
 Get information about class, type and size of the dataset. 
-```{r depression}
+```{r}
 str(depression)
 ```
 
 
 Recode variables:
-```{r depression}
+```{r}
 depression$Gender = replace(depression$Gender,depression$Gender==1,'Female');
 depression$Gender = replace(depression$Gender,depression$Gender==2,'Male');
 table(depression$Gender)
