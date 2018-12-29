@@ -28,3 +28,38 @@ t = table(friends$Friends)
 t
 ```
 
+Get a summary table, with the proportion of each category. 
+```{r }
+prop = prop.table(t)
+prop
+```
+
+Get a summary table, with the percentage of each category. 
+```{r }
+pct = prop.table(t) * 100
+pct
+```
+
+Create a pie-chart
+```{r }
+pie(t)
+```
+
+Create a pie-chart using the percentages. First round the percentages. 
+```{r }
+pf = round(pct, 1)
+pf
+```
+
+Next we will create a label that will include the category name and the percent as the labels for each section of the pie chart. R defaults to alphabetical order for tables and graphic creation so if you create your own labels list the names accordingly.
+
+```{r }
+lbl = paste(c("No difference", "Opposite sex", "Same sex"), pf, "%", sep = " ")
+lbl
+```
+
+Finally, create the pie chart with the new label added
+```{r }
+pie(t,label=lbl)
+```
+
