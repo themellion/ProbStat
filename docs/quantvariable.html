@@ -345,10 +345,45 @@ text-align: justify}
 <p>In order to describe the distribution, we need to supplement the graphical display not only with a measure of center, but also with a measure of the variability (or spread) of the distribution.</p>
 <p>In this section, we will discuss the three most commonly used measures of spread:</p>
 <ul>
-<li>Range</li>
-<li>Inter-quartile range (IQR)</li>
+<li>Range is the distance between the smallest data point (min) and the largest one (Max).</li>
+<li>Inter-quartile range (IQR) measures the variability of a distribution by giving us the range covered by the MIDDLE 50% of the data.</li>
 <li>Standard deviation</li>
 </ul>
+<p>Get the mean</p>
+<pre class="r"><code>mean(actor_age$Age)</code></pre>
+<pre><code>## [1] 44.97727</code></pre>
+<p>Get the standard deviation</p>
+<pre class="r"><code>sd(actor_age$Age)</code></pre>
+<pre><code>## [1] 9.749153</code></pre>
+<p>Get the variance</p>
+<pre class="r"><code>var(actor_age$Age)</code></pre>
+<pre><code>## [1] 95.04598</code></pre>
+<p>Get the median</p>
+<pre class="r"><code>median(actor_age$Age)</code></pre>
+<pre><code>## [1] 43.5</code></pre>
+<p>Get the Inter-quartile range</p>
+<pre class="r"><code>IQR(actor_age$Age)</code></pre>
+<pre><code>## [1] 12.25</code></pre>
+<p>Get the minimum</p>
+<pre class="r"><code>min(actor_age$Age)</code></pre>
+<pre><code>## [1] 29</code></pre>
+<p>Get the maximum</p>
+<pre class="r"><code>max(actor_age$Age)</code></pre>
+<pre><code>## [1] 76</code></pre>
+<p>Get sample size</p>
+<pre class="r"><code>length(actor_age$Age)</code></pre>
+<pre><code>## [1] 44</code></pre>
+<p>Get first quartile</p>
+<pre class="r"><code>quantile(actor_age$Age, 0.25)</code></pre>
+<pre><code>## 25% 
+##  38</code></pre>
+<p>Get third quartile</p>
+<pre class="r"><code>quantile(actor_age$Age, 0.75)</code></pre>
+<pre><code>##   75% 
+## 50.25</code></pre>
+</div>
+<div id="boxplots" class="section level3">
+<h3>Boxplots</h3>
 </div>
 
 
