@@ -46,7 +46,66 @@ In order to describe the distribution, we need to supplement the graphical displ
 
 In this section, we will discuss the three most commonly used measures of spread:
 
-* Range
-* Inter-quartile range (IQR)
+* Range is the distance between the smallest data point (min) and the largest one (Max).
+* Inter-quartile range (IQR) measures the variability of a distribution by giving us the range covered by the MIDDLE 50% of the data. 
 * Standard deviation
+
+Get the mean
+```{r }
+mean(actor_age$Age)
+```
+
+Get the standard deviation
+```{r }
+sd(actor_age$Age)
+```
+
+
+Get the variance
+```{r }
+var(actor_age$Age)
+```
+
+
+Get the median
+```{r }
+median(actor_age$Age)
+```
+
+
+Get the Inter-quartile range
+```{r }
+IQR(actor_age$Age)
+```
+
+Get the minimum
+```{r }
+min(actor_age$Age)
+```
+
+
+Get the maximum
+```{r }
+max(actor_age$Age)
+```
+
+Get sample size
+```{r }
+length(actor_age$Age)
+```
+
+
+Get first quartile
+```{r }
+quantile(actor_age$Age, 0.25)
+```
+
+
+Get third quartile
+```{r }
+quantile(actor_age$Age, 0.75)
+```
+
+### Boxplots
+
 
