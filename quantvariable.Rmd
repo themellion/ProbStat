@@ -107,5 +107,27 @@ quantile(actor_age$Age, 0.75)
 ```
 
 ### Boxplots
+Boxplots are useful when presenting side-by-side for comparing and contrasting distributions from two or more groups.
 
+The percentage of each entering Freshman class that graduated on time was recorded for each of six colleges at a major university over a period of several years. (Source: This data is distributed with the software package, Data Desk. (1993). Ithaca, NY: Data Description, Inc., and appears [here](http://lib.stat.cmu.edu/DASL/). 
+
+In order to compare the graduation rates among the different colleges, we will create side-by-side boxplots (graduation rate by college), and supplement the graph with numerical measures.
+
+Load data
+```{r }
+load("data/graduation.RData")
+```
+
+Get quick summary
+```{r }
+summary(grad_data)
+```
+
+
+See side-by-side boxplots
+```{r }
+boxplot(grad_data, xlab="Colleges",ylab ="Graduation Rates", main="Comparison of Graduation Rates", col = rainbow(6))
+```
+
+### Standard deviation
 
