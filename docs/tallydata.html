@@ -287,6 +287,9 @@ $(document).ready(function () {
 <li>
   <a href="tallydata.html">Tallying Data and Pie Charts</a>
 </li>
+<li>
+  <a href="quantvariable.html">Quantitative Variables</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -325,6 +328,34 @@ t</code></pre>
 <pre><code>## 
 ## No difference  Opposite sex      Same sex 
 ##           602           434           164</code></pre>
+<p>Get a summary table, with the proportion of each category.</p>
+<pre class="r"><code>prop = prop.table(t)
+prop</code></pre>
+<pre><code>## 
+## No difference  Opposite sex      Same sex 
+##     0.5016667     0.3616667     0.1366667</code></pre>
+<p>Get a summary table, with the percentage of each category.</p>
+<pre class="r"><code>pct = prop.table(t) * 100
+pct</code></pre>
+<pre><code>## 
+## No difference  Opposite sex      Same sex 
+##      50.16667      36.16667      13.66667</code></pre>
+<p>Create a pie-chart</p>
+<pre class="r"><code>pie(t)</code></pre>
+<p><img src="tallydata_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Create a pie-chart using the percentages. First round the percentages.</p>
+<pre class="r"><code>pf = round(pct, 1)
+pf</code></pre>
+<pre><code>## 
+## No difference  Opposite sex      Same sex 
+##          50.2          36.2          13.7</code></pre>
+<p>Next we will create a label that will include the category name and the percent as the labels for each section of the pie chart. R defaults to alphabetical order for tables and graphic creation so if you create your own labels list the names accordingly.</p>
+<pre class="r"><code>lbl = paste(c(&quot;No difference&quot;, &quot;Opposite sex&quot;, &quot;Same sex&quot;), pf, &quot;%&quot;, sep = &quot; &quot;)
+lbl</code></pre>
+<pre><code>## [1] &quot;No difference 50.2 %&quot; &quot;Opposite sex 36.2 %&quot;  &quot;Same sex 13.7 %&quot;</code></pre>
+<p>Finally, create the pie chart with the new label added</p>
+<pre class="r"><code>pie(t,label=lbl)</code></pre>
+<p><img src="tallydata_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 
 

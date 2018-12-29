@@ -9,6 +9,8 @@ navbar:
     href: exploreVariables.html
   - text: "Tallying Data and Pie Charts"
     href: tallydata.html
+  - text: "Quantitative Variables"
+    href: quantvariable.html
 output:
   html_document:
 theme: cosmo
