@@ -311,8 +311,8 @@ $(document).ready(function () {
 body {
 text-align: justify}
 </style>
-<div id="intro" class="section level3">
-<h3>Intro</h3>
+<div id="histogram" class="section level3">
+<h3>Histogram</h3>
 <p>In this section, we will explore the data collected from a quantitative variable, and learn how to describe and summarize the important features of its distribution. We will first learn how to display the distribution using graphs and then move on to discuss numerical measures.</p>
 <p>To display data from one quantitative variable graphically, we can use either the histogram or the stemplot.</p>
 <p>Load the data</p>
@@ -326,6 +326,29 @@ text-align: justify}
 ##  Mean   :44.98  
 ##  3rd Qu.:50.25  
 ##  Max.   :76.00</code></pre>
+<p>Create a histogram of the actors’ age.</p>
+<pre class="r"><code>hist(actor_age$Age, breaks=8, xlab=&quot;Age of Best Actor Oscar Winners (1970-2013)&quot;, ylab=&quot;Number of Actors&quot;, main=&quot;Best Actor Oscar Winners Ages&quot;, col = &#39;red&#39;)</code></pre>
+<p><img src="quantvariable_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="measures-of-central-tendency" class="section level3">
+<h3>Measures of central tendency</h3>
+<p>The overall pattern of the distribution of a quantitative variable is described by its shape, center, and spread. By inspecting the histogram, we can describe the shape of the distribution but we can only get a rough estimate for the center and spread. A description of the distribution of a quantitative variable must include, in addition to the graphical display, a more precise numerical description of the center and spread of the distribution. In this section we will learn:</p>
+<ul>
+<li>how to quantify the center and spread of a distribution with various numerical measures;</li>
+<li>some of the properties of those numerical measures; and</li>
+<li>how to choose the appropriate numerical measures of center and spread to supplement the histogram.</li>
+</ul>
+<p>The three main numerical measures for the center of a distribution are the <em>mode</em>, the <em>mean</em> and the <em>median</em>. Each one of these measures is based on a completely different idea of describing the center of a distribution.</p>
+</div>
+<div id="measures-of-spread" class="section level3">
+<h3>Measures of spread</h3>
+<p>In order to describe the distribution, we need to supplement the graphical display not only with a measure of center, but also with a measure of the variability (or spread) of the distribution.</p>
+<p>In this section, we will discuss the three most commonly used measures of spread:</p>
+<ul>
+<li>Range</li>
+<li>Inter-quartile range (IQR)</li>
+<li>Standard deviation</li>
+</ul>
 </div>
 
 
