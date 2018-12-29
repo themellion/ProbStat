@@ -48,7 +48,7 @@ In this section, we will discuss the three most commonly used measures of spread
 
 * Range is the distance between the smallest data point (min) and the largest one (Max).
 * Inter-quartile range (IQR) measures the variability of a distribution by giving us the range covered by the MIDDLE 50% of the data. 
-* Standard deviation
+* Standard deviation quantifies the spread of a distribution by measuring how far the observations are from their mean. 
 
 Get the mean
 ```{r }
