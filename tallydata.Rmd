@@ -2,9 +2,10 @@
 title: "Tallying Data and Pie Charts"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+<style>
+body {
+text-align: justify}
+</style>
 
 ### Summarise data and make charts
 A survey that asked 1,200 U.S. college students about their body perception also asked the following question:
